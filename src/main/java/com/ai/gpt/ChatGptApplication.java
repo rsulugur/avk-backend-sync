@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
-@SpringBootApplication(exclude = {WebMvcAutoConfiguration.class})
+@SpringBootApplication
 @EnableMongoAuditing(auditorAwareRef = "auditorAwareImpl")
 public class ChatGptApplication {
 
