@@ -1,0 +1,37 @@
+version: '3.7'
+
+services:
+#  mongo:
+#    image: mongo:latest
+#    container_name: remote_mongodb
+#    ports:
+#      - "27017:27017"
+#    volumes:
+#      - mongodb_data:/data/db
+#    networks:
+#      # container part of same network can communicate with each other using container_names
+#      - app-network
+
+  spring-boot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spring-boot-app-jwt
+    ports:
+      - "8080:8080"
+#    depends_on:
+      # this is golmthe container image name
+#      - mongo
+#    environment:
+      # this will override the localhost in application.properties file.
+      # this is to connect to mongo instance
+#      DB_HOST_NAME: remote_mongodb
+#    networks:
+#      - app-network
+
+#volumes:
+#  mongodb_data:
+
+#networks:
+#  app-network:
+#    driver: bridge

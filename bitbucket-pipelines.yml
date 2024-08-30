@@ -1,0 +1,25 @@
+#  Template maven-build
+
+#  This template allows you to test and build your Java project with Maven.
+#  The workflow allows running tests, code checkstyle and security scans on the default branch.
+
+# Prerequisites: pom.xml and appropriate project structure should exist in the repository.
+
+image: atlassian/default-image:3
+
+pipelines:
+  default:
+    - step:
+        name: Build and Test
+        caches:
+          - docker
+          - maven
+        script:
+          - docker build -t avk-code-repo .
+
+          - pipe: atlassian/aws-ecr-push-image:2.4.2
+            variables:
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEYgit 
+              AWS_DEFAULT_REGION: us-east-1
+              IMAGE_NAME: avk-code-repo
