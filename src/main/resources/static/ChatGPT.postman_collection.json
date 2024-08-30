@@ -1,0 +1,771 @@
+{
+	"info": {
+		"_postman_id": "7a0a9790-6973-47a0-9655-179eff46dcaa",
+		"name": "ChatGPT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17760585"
+	},
+	"item": [
+		{
+			"name": "Generate with AI",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJhdmsiLCJzdWIiOiJKV1QgVG9rZW4iLCJ1c2VybmFtZSI6InJlZGZkeUBhc3UuZWR1IiwiYXV0aG9yaXRpZXMiOiJST0xFX1VTRVIiLCJpYXQiOjE3MjUwNDg4MjUsImV4cCI6MTcyNTA1MDgyNX0._HpKXTb7oIvNwpw5lz5lEUL72xjCpGFcV8p52vZJqcCTqLp0Ppwej1orK1EstXYDMzRNLJtHSh4LO3rQLMtSbA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/ai/generate?message=\"List 3 cities in India\"",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ai",
+						"generate"
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "\"List 3 cities in India\""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "QuotaExceeded",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ai/generate",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ai",
+								"generate"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "343"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 20:40:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "429 - {\n    \"error\": {\n        \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.\",\n        \"type\": \"insufficient_quota\",\n        \"param\": null,\n        \"code\": \"insufficient_quota\"\n    }\n}\n"
+				},
+				{
+					"name": "Generate with AI - Message1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ai/generate?message=\"List 3 cities in USA\"",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ai",
+								"generate"
+							],
+							"query": [
+								{
+									"key": "message",
+									"value": "\"List 3 cities in USA\""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 20:46:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"generation\": \"1. New York City, New York\\n2. Los Angeles, California\\n3. Chicago, Illinois\"\n}"
+				},
+				{
+					"name": "Generate with AI - Message2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ai/generate?message=\"List 3 cities in India\"",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ai",
+								"generate"
+							],
+							"query": [
+								{
+									"key": "message",
+									"value": "\"List 3 cities in India\""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "71"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Aug 2024 12:15:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Mumbai, Delhi, Bangalore - popular cities in diverse and vibrant India."
+				}
+			]
+		},
+		{
+			"name": "Scrap Product Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJhdmsiLCJzdWIiOiJKV1QgVG9rZW4iLCJ1c2VybmFtZSI6InJlZGZkeUBhc3UuZWR1IiwiYXV0aG9yaXRpZXMiOiJST0xFX1VTRVIiLCJpYXQiOjE3MjUwNDg4MjUsImV4cCI6MTcyNTA1MDgyNX0._HpKXTb7oIvNwpw5lz5lEUL72xjCpGFcV8p52vZJqcCTqLp0Ppwej1orK1EstXYDMzRNLJtHSh4LO3rQLMtSbA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/fetch/products?searchKey=MacBook Pro M3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"fetch",
+						"products"
+					],
+					"query": [
+						{
+							"key": "searchKey",
+							"value": "MacBook Pro M3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sort By Price",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"MacBOokPro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/fetch/product?sortByPrice=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"fetch",
+								"product"
+							],
+							"query": [
+								{
+									"key": "sortByPrice",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Jul 2024 15:23:13 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 0,\n        \"productName\": \"Apple MacBook Pro 15 Retina Laptop Quad Core i7 16GB RAM 512GB SSD - WARRANTY\",\n        \"productUrl\": \"https://www.ebay.com/itm/404931156114\",\n        \"productPrice\": 349,\n        \"createdAt\": \"2024-07-29T15:23:08.268+00:00\"\n    },\n    {\n        \"id\": 0,\n        \"productName\": \"Apple MacBook Pro MLH12LL/A 13-inch Laptop with Touch Bar, 2.9GHz Dual-core Intel Core i5, 8GB Memory, 256GB, Retina Display, Silver (Renewed)\",\n        \"productUrl\": \"https://www.amazon.com/Apple-MacBook-MLH12LL-13-inch-Dual-core/dp/B07V6TTPS3/ref=sr_1_7\",\n        \"productPrice\": 349,\n        \"createdAt\": \"2024-07-29T15:23:13.513+00:00\"\n    },\n    {\n        \"id\": 0,\n        \"productName\": \"Apple MacBook Pro 15.4-inch, Touch Bar, Core i7, 16GB RAM, 256GB SSD, Space Gray\",\n        \"productUrl\": \"https://www.ebay.com/itm/176419883100\",\n        \"productPrice\": 379,\n        \"createdAt\": \"2024-07-29T15:23:09.203+00:00\"\n    },\n    {\n        \"id\": 0,\n        \"productName\": \"EXCELLENT Apple MacBook Pro 13 RETINA INTEL CORE 16GB RAM 512GB SSD - ALL STATE\",\n        \"productUrl\": \"https://www.ebay.com/itm/285929385176\",\n        \"productPrice\": 389,\n        \"createdAt\": \"2024-07-29T15:23:08.885+00:00\"\n    },\n    {\n        \"id\": 0,\n        \"productName\": \"2019 Apple MacBook Pro with 1.4GHz Intel Core i5 (13-inch, 8GB RAM, 512GB SSD) Space Gray (Renewed)\",\n        \"productUrl\": \"https://www.amazon.com/Apple-MacBook-1-4GHz-13-inch-Renewed/dp/B0BTMNF41B/ref=sr_1_3\",\n        \"productPrice\": 459,\n        \"createdAt\": \"2024-07-29T15:23:13.105+00:00\"\n    },\n    {\n        \"id\": 0,\n        \"productName\": \"2019 Apple MacBook Pro with 2.6GHz Intel Core i7 (15-inch, 32GB RAM, 256GB SSD) - Space Gray (Renewed)\",\n        \"productUrl\": \"https://www.amazon.com/Apple-MacBook-2-6GHz-Intel-15-inch/dp/B0BDK6S7T4/ref=sr_1_6\",\n        \"productPrice\": 489,\n        \"createdAt\": \"2024-07-29T15:23:13.414+00:00\"\n    },\n    {\n        \"id\": 0,\n        \"productName\": \"Late 2019 Apple MacBook Pro with 2.6GHz Intel Core i7 (16 inch, 16GB RAM, 512GB) Space Gray (Renewed)\",\n        \"productUrl\": \"https://www.amazon.com/Apple-MacBook-16-inch-512GB-Storage/dp/B082P8N4KJ/ref=sr_1_10\",\n        \"productPrice\": 589,\n        \"createdAt\": \"2024-07-29T15:23:13.832+00:00\"\n    },\n    {\n        \"id\": 0,\n        \"productName\": \"2024 OSX SONOMA BEAST MACBOOK PRO 15\\\" - 2.2GHz i7 - 32GB RAM - 512GB SSD - GRAY\",\n        \"productUrl\": \"https://www.ebay.com/itm/405080218918\",\n        \"productPrice\": 599.99,\n        \"createdAt\": \"2024-07-29T15:23:09.132+00:00\"\n    },\n    {\n        \"id\": 0,\n        \"productName\": \"Apple MacBook Pro 13in (256GB SSD, M1, 8GB) Laptop - Space Gray - MYD82LL/A...\",\n        \"productUrl\": \"https://www.ebay.com/itm/387241026113\",\n        \"productPrice\": 620,\n        \"createdAt\": \"2024-07-29T15:23:08.643+00:00\"\n    },\n    {\n        \"id\": 0,\n        \"productName\": \"2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) Space Gray (Renewed)\",\n        \"productUrl\": \"https://www.amazon.com/MacBook-Apple-Memory-256GB-Space/dp/B08PPZMDPK/ref=sr_1_5\",\n        \"productPrice\": 659,\n        \"createdAt\": \"2024-07-29T15:23:13.316+00:00\"\n    }\n]"
+				},
+				{
+					"name": "Search - FormalShoes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/fetch/products?searchKey=Bottle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"fetch",
+								"products"
+							],
+							"query": [
+								{
+									"key": "searchKey",
+									"value": "Bottle"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Aug 2024 12:18:03 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Men's Dress Shoes Formal Slip on Comfort Oxford Shoes Wedding Shoes\",\n        \"url\": \"https://www.ebay.com/itm/274636854598\",\n        \"price\": 30.99,\n        \"source\": \"Ebay\",\n        \"logo\": \"https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png\",\n        \"desc\": \"Elegant slip-on oxford shoes for formal events and weddings. Comfortable design.\",\n        \"createdAt\": \"2024-08-02T12:18:00.437+00:00\"\n    },\n    {\n        \"name\": \"Bruno Marc\\nMen's Square Toe Dress Loafers Formal Shoes\",\n        \"url\": \"https://www.amazon.com/Bruno-Cambridge-05-Black-Leather-Loafers/dp/B073VRZY7T/ref=sr_1_3\",\n        \"price\": 31,\n        \"source\": \"Amazon\",\n        \"logo\": \"https://crowdiate.com/wp-content/uploads/2020/07/Amazon-Thumbnail.png\",\n        \"desc\": \"Stylish, sophisticated, square toe loafers for men's formal attire.\",\n        \"createdAt\": \"2024-08-02T12:17:49.793+00:00\"\n    },\n    {\n        \"name\": \"Bruno Marc\\nMen's Dress Shoes Formal Oxfords\",\n        \"url\": \"https://www.amazon.com/Bruno-Prime-1-Black-Leather-Oxfords/dp/B01MTLT269/ref=sr_1_4\",\n        \"price\": 32,\n        \"source\": \"Amazon\",\n        \"logo\": \"https://crowdiate.com/wp-content/uploads/2020/07/Amazon-Thumbnail.png\",\n        \"desc\": \"Stylish, comfortable, durable, classic, versatile, high-quality, affordable, sophisticated, polished, professional\",\n        \"createdAt\": \"2024-08-02T12:17:49.859+00:00\"\n    },\n    {\n        \"name\": \"Men Loafer Shoes Dress Shoes Slip-on Penny Business Formal Shoes Size\",\n        \"url\": \"https://www.ebay.com/itm/285414951402\",\n        \"price\": 33.99,\n        \"source\": \"Ebay\",\n        \"logo\": \"https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png\",\n        \"desc\": \"Stylish men's loafers, slip-on, penny, business formal shoes in various sizes.\",\n        \"createdAt\": \"2024-08-02T12:18:00.613+00:00\"\n    },\n    {\n        \"name\": \"Men's Dress Sneaker Oxfords Casual Wingtip Brogue Non-Slip Formal Shoes Brown\",\n        \"url\": \"https://www.ebay.com/itm/305516364755\",\n        \"price\": 35.99,\n        \"source\": \"Ebay\",\n        \"logo\": \"https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png\",\n        \"desc\": \"Stylish men's oxfords with wingtip brogue detailing in non-slip design.\",\n        \"createdAt\": \"2024-08-02T12:18:01.232+00:00\"\n    },\n    {\n        \"name\": \"Bruno Marc\\nMen's Oxfords Formal Dress Shoes\",\n        \"url\": \"https://www.amazon.com/Bruno-Marc-Louis_2-Formal-Oxfords/dp/B07FD6NQ58/ref=sr_1_1\",\n        \"price\": 38,\n        \"source\": \"Amazon\",\n        \"logo\": \"https://crowdiate.com/wp-content/uploads/2020/07/Amazon-Thumbnail.png\",\n        \"desc\": \"Stylish, versatile, comfortable, classic, high-quality, affordable, sophisticated, timeless, sleek, polished.\",\n        \"createdAt\": \"2024-08-02T12:17:49.629+00:00\"\n    },\n    {\n        \"name\": \"Bruno Marc\\nMen's Dress Oxford Shoes Classic Lace Up Formal Shoes\",\n        \"url\": \"https://www.amazon.com/Bruno-Downing-02-Black-Leather-Oxfords/dp/B06XC13ZR9/ref=sr_1_5\",\n        \"price\": 42,\n        \"source\": \"Amazon\",\n        \"logo\": \"https://crowdiate.com/wp-content/uploads/2020/07/Amazon-Thumbnail.png\",\n        \"desc\": \"Timeless, sophisticated men's oxford shoes for formal occasions. Classic lace-up design.\",\n        \"createdAt\": \"2024-08-02T12:17:49.922+00:00\"\n    },\n    {\n        \"name\": \"Clarks\\nMen's Tilden Cap Oxford\",\n        \"url\": \"https://www.amazon.com/Clarks-Tilden-Cap-Oxford-Leather/dp/B00SMJO9EO/ref=sr_1_2\",\n        \"price\": 64,\n        \"source\": \"Amazon\",\n        \"logo\": \"https://crowdiate.com/wp-content/uploads/2020/07/Amazon-Thumbnail.png\",\n        \"desc\": \"Dapper, classic oxford shoe for men by Clarks. Timeless style.\",\n        \"createdAt\": \"2024-08-02T12:17:49.724+00:00\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Recent Searches",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJhdmsiLCJzdWIiOiJKV1QgVG9rZW4iLCJ1c2VybmFtZSI6InJlZGZkeUBhc3UuZWR1IiwiYXV0aG9yaXRpZXMiOiJST0xFX1VTRVIiLCJpYXQiOjE3MjUwNDg4MjUsImV4cCI6MTcyNTA1MDgyNX0._HpKXTb7oIvNwpw5lz5lEUL72xjCpGFcV8p52vZJqcCTqLp0Ppwej1orK1EstXYDMzRNLJtHSh4LO3rQLMtSbA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/recent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"recent"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/recent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"recent"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Aug 2024 12:19:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"66acce7b430762781c422508\",\n        \"searchQuery\": \"FormalShoes\",\n        \"timeTaken\": 17,\n        \"results\": {\n            \"AmazonScrapper\": 5,\n            \"EbayScrapper\": 3\n        },\n        \"createdAt\": \"2024-08-02T08:18:03.852\"\n    },\n    {\n        \"_id\": \"66acccbb6da45654ca5917c8\",\n        \"searchQuery\": \"Iphone11 Pro Max\",\n        \"timeTaken\": 6,\n        \"results\": {\n            \"AmazonScrapper\": 5,\n            \"EbayScrapper\": 1\n        },\n        \"createdAt\": \"2024-08-02T08:10:35.866\"\n    },\n    {\n        \"_id\": \"66ac60e26da45654ca5917c7\",\n        \"searchQuery\": \"Iphone14 Pro Max\",\n        \"timeTaken\": 6,\n        \"results\": {\n            \"AmazonScrapper\": 5,\n            \"EbayScrapper\": 3\n        },\n        \"createdAt\": \"2024-08-02T00:30:26.9\"\n    },\n    {\n        \"_id\": \"66ac60d86da45654ca5917c4\",\n        \"searchQuery\": \"Iphone14 Pro Max\",\n        \"timeTaken\": 103,\n        \"results\": {\n            \"AmazonScrapper\": 5,\n            \"BestBuyScrapper\": 3,\n            \"EbayScrapper\": 3\n        },\n        \"createdAt\": \"2024-08-02T00:30:16.848\"\n    },\n    {\n        \"_id\": \"66ac6014d5dd10503b22e460\",\n        \"searchQuery\": \"LG27 inch\",\n        \"timeTaken\": 6,\n        \"results\": {\n            \"AmazonScrapper\": 2,\n            \"EbayScrapper\": 8\n        },\n        \"createdAt\": \"2024-08-02T00:27:00.268\"\n    },\n    {\n        \"_id\": \"66ac50763054364dfc74f01e\",\n        \"searchQuery\": \"SunGlasses\",\n        \"timeTaken\": 119,\n        \"results\": {\n            \"AmazonScrapper\": 10,\n            \"BestBuyScrapper\": 10,\n            \"EbayScrapper\": 6\n        },\n        \"createdAt\": \"2024-08-01T23:20:22.127\"\n    },\n    {\n        \"_id\": \"66ac44111189793a931afd83\",\n        \"searchQuery\": \"SunGlasses\",\n        \"timeTaken\": 45,\n        \"results\": {\n            \"BestBuyScrapper\": 18\n        },\n        \"createdAt\": \"2024-08-01T22:27:29.602\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Async fetch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"MxMasterMS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v2/fetch/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"fetch",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": \"MxMasterMS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v2/fetch/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"fetch",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Aug 2024 12:29:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Logitech\\nMX Master 3S, Black\",\n        \"url\": \"https://www.amazon.com/Logitech-Master-Performance-Ultra-Fast-Scrolling/dp/B0BS9VVQPD/ref=sr_1_1\",\n        \"price\": 82,\n        \"source\": \"Amazon\",\n        \"logo\": \"https://crowdiate.com/wp-content/uploads/2020/07/Amazon-Thumbnail.png\",\n        \"createdAt\": \"2024-08-02T12:29:03.858+00:00\"\n    },\n    {\n        \"name\": \"Logitech\\nMX Master 3S - Wireless Performance Mouse, Ergo, 8K DPI, Track on Glass, Quiet Clicks, USB-C, Bluetooth, Windows, Linux, Chrome - Pale Grey - With Free Adobe Creative Cloud Subscription\",\n        \"url\": \"https://www.amazon.com/Logitech-MX-Master-3S-Pale/dp/B09HMKFDXC/ref=sr_1_2\",\n        \"price\": 88,\n        \"source\": \"Amazon\",\n        \"logo\": \"https://crowdiate.com/wp-content/uploads/2020/07/Amazon-Thumbnail.png\",\n        \"createdAt\": \"2024-08-02T12:29:03.957+00:00\"\n    },\n    {\n        \"name\": \"Logitech\\nMX Master 3S for Mac Wireless Bluetooth Mouse, Ultra-Fast Scrolling, Ergo, 8K DPI, Quiet Clicks, Track on Glass, USB-C, Apple, iPad - Space Grey - With Free Adobe Creative Cloud Subscription\",\n        \"url\": \"https://www.amazon.com/Logitech-Wireless-Bluetooth-Ultra-Fast-Scrolling/dp/B09HMV6K1W/ref=sr_1_3\",\n        \"price\": 96,\n        \"source\": \"Amazon\",\n        \"logo\": \"https://crowdiate.com/wp-content/uploads/2020/07/Amazon-Thumbnail.png\",\n        \"createdAt\": \"2024-08-02T12:29:04.025+00:00\"\n    },\n    {\n        \"name\": \"Logitech MX Master 3S - Wireless Performance Mouse with Ultra-fast Scrolling, Ergo, 8K DPI, Track on Glass, Quiet Clicks, USB-C, Bluetooth, Windows, Linux, Chrome - Pale Grey (Renewed)\",\n        \"url\": \"https://www.amazon.com/Logitech-Master-Performance-Ultra-fast-Scrolling/dp/B0C9V517GL/ref=sr_1_4\",\n        \"price\": 69,\n        \"source\": \"Amazon\",\n        \"logo\": \"https://crowdiate.com/wp-content/uploads/2020/07/Amazon-Thumbnail.png\",\n        \"createdAt\": \"2024-08-02T12:29:04.092+00:00\"\n    },\n    {\n        \"name\": \"Logitech\\nMX Master 2S Wireless Mouse - Hyper-Fast Scrolling, Ergonomic, Rechargeable, Control 3 Computers, Graphite\",\n        \"url\": \"https://www.amazon.com/Logitech-Master-Wireless-Mouse-Rechargeable/dp/B071YZJ1G1/ref=sr_1_5\",\n        \"price\": 66,\n        \"source\": \"Amazon\",\n        \"logo\": \"https://crowdiate.com/wp-content/uploads/2020/07/Amazon-Thumbnail.png\",\n        \"createdAt\": \"2024-08-02T12:29:04.147+00:00\"\n    },\n    {\n        \"name\": \"Autel MaxiCheck MX808S MK808S 2024 All Sytem Active Test FCA Autoauth Android 11\",\n        \"url\": \"https://www.ebay.com/itm/116270370133\",\n        \"price\": 380,\n        \"source\": \"Ebay\",\n        \"logo\": \"https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png\",\n        \"createdAt\": \"2024-08-02T12:29:08.226+00:00\"\n    },\n    {\n        \"name\": \"Autel MaxiCOM MK808S PRO OBD2 Car Diagnostic Scanner Tool KEY Coding Code Reader\",\n        \"url\": \"https://www.ebay.com/itm/372866457328\",\n        \"price\": 380,\n        \"source\": \"Ebay\",\n        \"logo\": \"https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png\",\n        \"createdAt\": \"2024-08-02T12:29:08.283+00:00\"\n    },\n    {\n        \"name\": \"2024 Autel MaxiCOM MK808S Bidirectional Car Diagnostic Scanner Tool Key Coding\",\n        \"url\": \"https://www.ebay.com/itm/222601470215\",\n        \"price\": 380,\n        \"source\": \"Ebay\",\n        \"logo\": \"https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png\",\n        \"createdAt\": \"2024-08-02T12:29:08.339+00:00\"\n    },\n    {\n        \"name\": \"Motorized Bicycle true 78.5cc MS440\",\n        \"url\": \"https://www.ebay.com/itm/387208529138\",\n        \"price\": 600,\n        \"source\": \"Ebay\",\n        \"logo\": \"https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png\",\n        \"createdAt\": \"2024-08-02T12:29:08.402+00:00\"\n    },\n    {\n        \"name\": \"2024 Autel MaxiCheck MX900 Full System Bidirectional Scanner Upgrade MK808BT PRO\",\n        \"url\": \"https://www.ebay.com/itm/155924218990\",\n        \"price\": 529,\n        \"source\": \"Ebay\",\n        \"logo\": \"https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png\",\n        \"createdAt\": \"2024-08-02T12:29:09.001+00:00\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:1234/v1/chat/completions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"model\": \"TheBloke/Llama-2-7B-Chat-GGUF\",\r\n    \"messages\": [ \r\n      { \"role\": \"system\", \"content\": \"Always answer in rhymes.\" },\r\n      { \"role\": \"user\", \"content\": \"Introduce yourself.\" }\r\n    ], \r\n    \"temperature\": 0.7, \r\n    \"max_tokens\": -1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/v1/chat/completions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"v1",
+						"chat",
+						"completions"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:1234/v1/chat/completions \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{ \r\n    \"model\": \"TheBloke/Llama-2-7B-Chat-GGUF\",\r\n    \"messages\": [ \r\n      { \"role\": \"system\", \"content\": \"Always answer in rhymes.\" },\r\n      { \"role\": \"user\", \"content\": \"Introduce yourself.\" }\r\n    ], \r\n    \"temperature\": 0.7, \r\n    \"max_tokens\": -1,\r\n    \"stream\": true\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"redfdy@asu.edu\",\r\n    \"password\": \"Rohith@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Rohith@1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "rsulugur@asu.edu",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"redfdy@asu.edu\",\r\n    \"password\": \"Rohith@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Readiness Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health/readiness",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health",
+						"readiness"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
