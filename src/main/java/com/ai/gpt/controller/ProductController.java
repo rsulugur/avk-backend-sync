@@ -56,10 +56,4 @@ public class ProductController {
         final Pageable pageable = PageRequest.of(0, 10, sort);
         return auditRepository.findAllByCreatedBy(username, pageable).orElse(new ArrayList<>());
     }
-
-    @GetMapping("/health")
-    @Tag(name = "Product Scrapping Controller", description = "API for fetching the Recent Audits")
-    public ResponseEntity<Object> getHealth() {
-        return ResponseEntity.ok().body("hello");
-    }
 }
